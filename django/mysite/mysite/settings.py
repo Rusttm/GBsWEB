@@ -41,8 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'webapp.myuploader',
-    'webapp.models.Document',
-    'webapp.forms.DocumentForm'
+    # 'webapp.models.Document',
+    # 'webapp.forms.DocumentForm',
+    'webapp'
 ]
 
 MIDDLEWARE = [
