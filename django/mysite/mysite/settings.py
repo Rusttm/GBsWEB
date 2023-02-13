@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 import configparser
 config = configparser.ConfigParser()
 
@@ -40,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'webapp.myuploader',
+    'webapp.models.Document',
+    'webapp.forms.DocumentForm'
 ]
 
 MIDDLEWARE = [
@@ -83,6 +86,10 @@ DATABASES = {
     }
 }
 
+# want to download files
+# link is https://stackoverflow.com/questions/5871730/how-to-upload-a-file-in-django
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
