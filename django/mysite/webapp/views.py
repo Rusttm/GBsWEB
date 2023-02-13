@@ -49,30 +49,33 @@ def upload_file(request):
         form = UploadFileForm()
     return render(request, 'webapp/myform.html', {'form': form} )
 
-# from webapp.models import Document
-# from webapp.forms import DocumentForm
+import webapp
+from webapp.models import Document
+from webapp.forms import DocumentForm
 # from django.core.urlresolvers import reverse
 from django.urls import reverse
 
-# def list(request):
-#     # Handle file upload
-#     if request.method == 'POST':
-#         form = DocumentForm(request.POST, request.FILES)
-#         if form.is_valid():
-#             newdoc = Document(docfile=request.FILES['docfile'])
-#             newdoc.save()
-#
-#             # Redirect to the document list after POST
-#             return HttpResponseRedirect(reverse('webapp.views.list'))
-#     else:
-#         form = DocumentForm() # A empty, unbound form
-#
-#     # Load documents for the list page
-#     documents = Document.objects.all()
-#
-#     # Render list page with the documents and the form
-#     return render_to_response(
-#         'webapp/list.html',
-#         {'documents': documents, 'form': form},
-#         context_instance=RequestContext(request)
-#     )
+
+def list(request):
+    # Handle file upload
+    if request.method == 'POST':
+        form = DocumentForm(request.POST, request.FILES)
+        if form.is_valid():
+            newdoc = Document(docfile=request.FILES['docfile'])
+            newdoc.save()
+
+            # Redirect to the document list after POST
+            return HttpResponseRedirect(reverse('list'))
+    else:
+        form = DocumentForm() # A empty, unbound form
+
+    # Load documents for the list page
+    documents = Document.objects.all()
+
+    # Render list page with the documents and the form
+    # return render_to_response(
+    #     'webapp/list.html',
+    #     {'documents': documents, 'form': form},
+    #     context_instance=RequestContext(request)
+    # )
+    return render(request, 'webapp/list.html', context={'documents': documents, 'form': form})

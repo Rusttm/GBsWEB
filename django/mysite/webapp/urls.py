@@ -1,6 +1,6 @@
 
 # -*- coding: utf-8 -*-
-from django.urls import path
+from django.urls import path, re_path
 
 import webapp
 
@@ -10,6 +10,7 @@ urlpatterns = [
     path('', views.index, name='webapp/index'),
     path('example', views.example_page, name='webapp/example'),
     path('file', views.upload_file, name='uploader'),
-    # url(r'^list/$', views.list, name='list'),
+    path('list', webapp.views.list, name='list'),
+    re_path(r'^list/$', webapp.views.list),
 
 ]
