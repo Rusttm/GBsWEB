@@ -5,15 +5,10 @@ from django.http import HttpResponse
 def index(request):
     """ return render page index """
     # return HttpResponse("Hello, world. You're at the polls index.")
-    context = {
-        'num_books': 0,
-        'num_instances': 0,
-        'num_instances_available': 0,
-        'num_authors': 00,
-    }
+    documents = Document.objects.all()
 
     # Render the HTML template index.html with the data in the context variable
-    return render(request, 'webapp/index.html', context=context)
+    return render(request, 'webapp/index.html', context={'documents': documents})
 
 def example_page(request):
     """ return render page index """

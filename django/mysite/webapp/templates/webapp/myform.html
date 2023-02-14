@@ -10,8 +10,8 @@
     {% block content %}
       <form method="POST">
         <!-- {% csrf_token %} -->
-        {{ form.title}}
-        {{ form.file}}
+        {{ form.as_p}}
+        {{ form.as_p}}
         <input type="submit" value="Upload"/>
       </form>
       <a target="_blank" rel="noopener noreferrer" href="{{ comment.tag }}">{{ comment.result }}</a>
