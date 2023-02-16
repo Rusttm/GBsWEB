@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     # 'webapp.views',
     # 'webapp.models.Document',
     # 'webapp.forms.DocumentForm',
-    'webapp'
+    'webapp',
+    'matplotapp'
 ]
 
 MIDDLEWARE = [
@@ -66,7 +67,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR/'filesapp/templates'],
+        'DIRS': [BASE_DIR/'matplotapp/templates', BASE_DIR/'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
