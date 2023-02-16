@@ -8,4 +8,4 @@ class FileUploaded(models.Model):
         ordering=['-date']
 
     def __str__(self):
-        return str(self.date)
+        return str(self.date) + str(self.upload)

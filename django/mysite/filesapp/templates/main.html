@@ -1,9 +1,7 @@
 {% extends "base.html" %}
 
-{% block title %}
-title
-{% endblock title %}
 {% block content %}
+<div>
 <h6>UPLOAD MULTIPLE IMAGES NOW</h6>
 <br>
 <form enctype='multipart/form-data' action="filesapp/upload/" method='POST' class="dropzone dz" id="my-dropzone" >
@@ -12,5 +10,5 @@ title
       <input name="file" type="file" multiple />
     </div>
 </form>
-
+</div>
 {% endblock content %}
