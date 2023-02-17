@@ -8,10 +8,10 @@ from .models import FileUploaded
 def index(request):
     """ return render page index """
     # return HttpResponse("Hello, world. You're at the polls index.")
-    return render(request, 'base.html', context={'name': 'Rusttm'})
+    return render(request, 'filesapp/base.html', context={'name': 'Rusttm'})
 
 class MainView(TemplateView):
-    template_name = 'main.html'
+    template_name = 'filesapp/main.html'
 
 def file_upload_view(request):
     print(request.FILES)

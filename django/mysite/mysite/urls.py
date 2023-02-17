@@ -26,13 +26,14 @@ import webapp
 
 
 urlpatterns = [
-    path('', include('webapp.urls')),
-    path('web/', include('webapp.urls')),
+    path('', include('mainapp.urls')),
+    path('main/', include('mainapp.urls')),
+    path('webapp/', include('webapp.urls')),
     path('admin/', admin.site.urls),
-    path('index', webapp.views.index, name='webapp/index'),
+    # path('index', webapp.views.index, name='webapp/index'),
     path('matplotapp/', include('matplotapp.urls')),
     path('filesapp/', include('filesapp.urls')),
-    path(r'^$', include('webapp.urls')),
+    # path(r'^$', include('webapp.urls')),
 ]
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

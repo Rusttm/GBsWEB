@@ -7,13 +7,13 @@ from .utils import get_plot, get_func
 def index(request):
     """ return render page index """
     # return HttpResponse("Hello, world. You're at the polls index.")
-    return render(request, 'base.html', context={'name': 'Rusttm'})
+    return render(request, 'matplotapp/base.html', context={'name': 'Rusttm'})
 
 def main_view(request):
-    x= [i for i in range(-5,6)]
+    x = [i for i in range(-5,6)]
     y = [x_value**2 for x_value in x]
     chart = get_plot(x, y)
-    return render(request, 'main.html', context={'chart': chart})
+    return render(request, 'matplotapp/main.html', context={'chart': chart})
 
 from .forms import UploadFunction
 def func_view(request):
@@ -33,11 +33,13 @@ def func_view(request):
             'accuracy': accuracy,
         }
         print(f'function_string is {function_string}')
+        chart = get_func(function_string=function_string, range=(range_left, range_right), accuracy=accuracy)
+        return render(request, 'matplotapp/main.html', {'chart': chart, 'form': form, 'context': context})
+
         # if form.is_valid():
         #     handle_uploaded_file(request.FILES['file'])
         #     return HttpResponseRedirect('/success/url/')
+
     else:
         form = UploadFunction()
-
-    chart = get_func(function_string=function_string, range=(range_left, range_right), accuracy=accuracy)
-    return render(request, 'main.html', {'chart': chart, 'form': form, 'context': context} )
+        return render(request, 'matplotapp/main.html', {'form': form} )

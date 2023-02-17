@@ -44,12 +44,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'webapp.myuploader',
+    'mainapp',
     'filesapp',
-    # 'webapp.views',
-    # 'webapp.models.Document',
-    # 'webapp.forms.DocumentForm',
     'webapp',
     'matplotapp'
+
 ]
 
 MIDDLEWARE = [
@@ -67,7 +66,8 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR/'matplotapp/templates', BASE_DIR/'templates'],
+        'DIRS': [BASE_DIR/'templates'],
+        # 'DIRS': [BASE_DIR/'matplotapp/temp_templates', BASE_DIR/'temp_templates', BASE_DIR/'mainapp/temp_templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
