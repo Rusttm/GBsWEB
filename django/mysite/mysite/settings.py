@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'mainapp',
     'filesapp',
     'webapp',
+    'calcapp',
     'matplotapp'
 
 ]

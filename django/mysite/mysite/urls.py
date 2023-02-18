@@ -34,6 +34,7 @@ urlpatterns = [
     # path('index', webapp.views.index, name='webapp/index'),
     path('matplotapp/', include('matplotapp.urls')),
     path('filesapp/', include('filesapp.urls')),
+    path('calc/', include('calcapp.urls')),
     # path(r'^$', include('webapp.urls')),
 ]
 urlpatterns += staticfiles_urlpatterns()
