@@ -7,7 +7,7 @@ import webapp
 from . import views
 
 urlpatterns = [
-    path('', views.index, name='webapp/index'),
+    path('', views.index, name='webapp_view'),
     path('example', views.example_page, name='webapp/example'),
     path('file', views.upload_file, name='uploader'),
     path('list', webapp.views.list, name='list'),

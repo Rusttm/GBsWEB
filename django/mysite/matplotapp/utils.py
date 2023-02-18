@@ -29,7 +29,7 @@ def get_plot(x,y):
 
 def get_func(function_string='sin(x)', range = (-10,10), accuracy=3):
     plt.switch_backend('AGG')
-    plt.figure(figsize=(15, 5))
+    plt.figure(figsize=(7, 5))
     plt.title(function_string)
     function = resolver.ExpressionResolver(expression_str=function_string, interval=range, accuracy=accuracy)
     if function.CheckExpression():

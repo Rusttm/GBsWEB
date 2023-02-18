@@ -21,6 +21,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 import webapp
+import mainapp.views
 
 
 
@@ -28,7 +29,7 @@ import webapp
 urlpatterns = [
     path('', include('mainapp.urls')),
     path('main/', include('mainapp.urls')),
-    path('webapp/', include('webapp.urls')),
+    path('webapp/', include('webapp.urls'), name='webapp_views'),
     path('admin/', admin.site.urls),
     # path('index', webapp.views.index, name='webapp/index'),
     path('matplotapp/', include('matplotapp.urls')),
